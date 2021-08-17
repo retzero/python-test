@@ -28,7 +28,7 @@ jobs:
           set -x
           cd "${{ runner.tool_cache }}/Python"
           for x in `ls`; do
-            if [ -d $x ] then;
+            if [[ -d $x ]]; then
               tar -zcf $x.tar.gz $x
             fi
           done
