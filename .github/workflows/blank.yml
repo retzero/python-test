@@ -28,7 +28,9 @@ jobs:
           set -x
           cd "${{ runner.tool_cache }}/Python"
           for x in `ls`; do
-            tar -zcf $x.tar.gz $x
+            if [ -d $x ] then;
+              tar -zcf $x.tar.gz $x
+            fi
           done
 
       #- name: Upload tool cache artifact
