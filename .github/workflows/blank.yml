@@ -12,6 +12,7 @@ jobs:
       - name: Check tools cache directory
         run: |
           echo "${{ runner.tool_cache }}"
+          sudo rm -rf ~/.cache/pip/
 
       - uses: actions/checkout@v2
 
