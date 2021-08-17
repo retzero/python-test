@@ -23,15 +23,15 @@ jobs:
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
 
-      - name: Archive tool cache
-        run: |
-          set -x
-          cd "${{ runner.tool_cache }}/Python"
-          for x in `ls`; do
-            if [[ -d $x ]]; then
-              tar -zcf $x.tar.gz $x
-            fi
-          done
+      #- name: Archive tool cache
+      #  run: |
+      #    set -x
+      #    cd "${{ runner.tool_cache }}/Python"
+      #    for x in `ls`; do
+      #      if [[ -d $x ]]; then
+      #        tar -zcf $x.tar.gz $x
+      #      fi
+      #    done
 
       #- name: Upload tool cache artifact
       #  uses: actions/upload-artifact@v2
