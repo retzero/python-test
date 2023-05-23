@@ -1,0 +1,20 @@
+name: Setup-python test
+
+on: [ workflow_dispatch ]
+
+jobs:
+  original:
+    strategy:
+      matrix:
+        os: [ 'debian:11', 'debian:stretch', 'debian:bullseye', 'ubuntu:18.04', 'ubuntu:20.04', 'ubuntu:22.04' ]
+    runs-on: ${{ matrix.os }}
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.9.7
+
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
