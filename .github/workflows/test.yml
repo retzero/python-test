@@ -14,8 +14,12 @@ jobs:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-python@v4
+        if: always()
+        continue-on-error: true
         with:
           python-version: 3.9.7
 
       - name: Display Python version
+        if: always()
+        continue-on-error: true
         run: python -c "import sys; print(sys.version)"
