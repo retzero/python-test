@@ -8,7 +8,7 @@ jobs:
       matrix:
         os: [ 'debian:11', 'debian:stretch', 'debian:bullseye', 'ubuntu:18.04', 'ubuntu:20.04', 'ubuntu:22.04' ]
     container: ${{ matrix. os }}
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
 
       - uses: actions/checkout@v3
